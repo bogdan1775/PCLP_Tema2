@@ -1,0 +1,101 @@
+Copyright Croitoru Constantin-Bogdan Grupa 314CA 2022-2023
+
+1.Incarcarea in memorie a unei matrice noi:
+Functia primeste ca parametrii vectorul de matrici (v_mat), numarul de matrici
+(n) si vectorul care retine dimensiunea pentru fiecare matrice alocata in 
+memorie (dim_mat). Vectorul de matrici are dimensiune n, iar vectorul care 
+retine dimensiunile 2*n, retinandu-se in el 2 cate 2 dimensiunile matricelor.
+Daca nu exista nicio matrice in memorie, se aloca spatiu pentru o matrice in
+vectorul de matrici si 2 pozitii in vectorul de dimensiune. Daca exista deja o
+matrice atunci se realoca vectorul de matrice cu inca o dimensiune,iar vectorul
+de dimensiune cu inca 2. La final creste numarul de matrice alocate in memorie.
+
+
+2.Determinarea dimensiunilor unei matrice:
+Functia se numeste dimensiune si primeste ca parametrii numarul de matrice si
+vectorul de dimesiuni (dim_mat). Se afiseaza numarul de linii si coloane al 
+matricei cu indicile citit din vectorul de dimensiuni, aceasta fiind aflate pe
+pozitiile indice*2 si indice*2+1.
+
+
+3.Afisarea unei matrice:
+Functia primeste 3 parametrii: vectorul de matrice, nr de matrice si vectorul 
+cu dimensiunile acestora. Aceasta afiseaza elementele matricei cu indicele 
+citit, folosindu-se de vectorul de dimensiuni pentru a putea sti dimensiunea 
+matricei, si de vectorul de matrice pentru a afisa elementele.
+
+
+4.Redimensionarea unei matrice:
+Functia redimensionare primeste aceeasi 3 parametrii ca functia de afisarea. In
+interiorul acesteia se citesc numarul de linii si liniile dupa care se vrea sa 
+se faca redimensionarea, retinandu-se intr-un vector, l_indici. Acelasi lucru 
+se intampla si pentru coloane. Se retine intr-o matrice auxiliara matricea 
+formata din liniile si coloanele citite. Se elibereaza memoria pentru matricea
+cu indicele specificat, si se aloca memorie in functie de nr de linii si 
+coloane citit. La final se copiaza din aux, matricea auxiliara, in matrice 
+elementele acesteia, iar memoria pentru aux este eliberata.
+
+
+5.Inmultirea a 2 matrice:
+Functia se numeste inmultire si primeste tot 3 parametrii: vectorul de matrice,
+numarul de matrice si vectorul cu dimensiunile matricelor. Pentru rezultatul 
+inmultirii dintre cele 2 matrice se aloca spatiu la finalul vectorului de 
+matrice, tot odata se aloca spatii si in vectorul de dimensiuni. Matricea 
+rezultat are acelasi nr de linii cu prima matrice si acelasi nr de coloane cu a
+doua, aceste valori sunt retinute si in vectorul de dimensiuni. Se realizea 
+produsul matricelor si se retine in matricea creata, crescand cu o unitate 
+numarul de matrice.
+
+
+6.Sortarea matricelor pe baza sumei elementelor:
+Functia ordoneaza matricele in functie de suma elementelor lor si primeste tot
+cei 3 parametrii. In interiorul acesteia se aloca dinamic un vector numit a 
+care retine suma pentru fiecare matrice. In momentrul in care se ordoneaza 
+vectorul a care retine suma se interschimba si adresele matricilor din vectorul
+de matrice carora le corespund indicii care se schimba in a. La final se obtine
+vectorul de matrice ordonat si se elibereaza memoria pentru a.
+
+
+7.Transpunerea unei matrici:
+Functia primeste 3 parametrii si se numeste transpunere. Se aloca o matrice 
+auxiliara avand acelasi nr de linii si coloane cu matricea pentru care se 
+doreste sa se realizeze transpunerea si se copiaza elenmentele in aceasta. Se 
+elibereaza memoria pentru matricea cu indexul citit si se aloca spatiu, numarul
+de linii fiind  egal cu numarul de coloane pe care l-a avut initial si nr de 
+coloane egal cu nr de linii initial. La final se copiaza in aceasta elementele 
+din matricea auxiliara, dar cu indicii schimbati adica pentru elementul de pe 
+poz i si j primeste valoare elemnetului de pe poz j si i.Apoi se elibereaza 
+memoria pentru matricea auxiliara.
+
+
+8.Ridicarea la o putere in timp logaritmic:
+Aceasta primeste aceeasi 3 parametrii. Daca puterea este 0 elementele de pe 
+diagonala principala devin 1 si celelalte 0.In caz ca puterea este pozitiva, 
+pentru realizare operatiei se foloseste o matrice auxiliara numita b in care se
+retine produsul dintre matrice si b cand puterea este impara, b avand initial 
+elementele de pe diagonala principala 1, iar restul 0. Chiar daca puterea e 
+pozitiva sau negativa se retine in matricea cu indexul citit produsul cu ea 
+insasi, iar puterea este impartita la 2. Acestea se intampla cat timp puterea 
+este mai mare decat 1. La final matricea este egala cu produsul dintre ea si b.
+Pentru realizarea inmultirii se foloseste o functie numita inmultire_m_R care 
+inmulteste 2 matrici si retine rezultatul in prima matrice.
+
+
+9.Eliminarea din memorie a unei matrici:
+Functia poarta numele eliminare_mat. Incepand de la pozitia citita pana la 
+penultima se muta adresa matricelor cu o pozitii spre inceput (adica cea aflata
+pe pozitia i primeste adresa celei de pe i+1). Ultima primeste adresa matricei 
+cu indicele citit si se elibereaza memoria pentru aceasta. Acelasi lucru se 
+intampla si cu vectorul de dimensiuni.
+La final se realoca memoria pentru vectorul de matrici cu o unitate in minus, 
+iar pentru vectorul de matrici cu 2.Apoi numarul de matrice scade cu o unitate.
+
+
+10.Eliminarea tuturor resurselor:
+Functia se numeste eliberare. 
+Pentru fiecare matrice incepand de la ultima se elibereaza memoria pentru 
+fiecare. La final este eliberata si memoria pentru vectorul de dimensiuni, iar 
+n devine 0 si se opreste programul.
+
+
+
